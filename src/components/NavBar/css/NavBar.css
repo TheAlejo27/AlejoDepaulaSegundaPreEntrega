@@ -1,0 +1,45 @@
+.contenedorNav {
+    display: flex;
+    background-color: #464646;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 40px;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 16px;
+}
+
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border: 3px solid white;
+    padding: 5px;
+    border-radius: 60px;
+}
+
+.iconoShop{
+
+    margin: 10px;
+
+}
+
+.NavBar{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
