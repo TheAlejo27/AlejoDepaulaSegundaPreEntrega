@@ -1,0 +1,51 @@
+
+.productosDiv {
+    width: 315px;
+    height: 300px;
+    text-align: start;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #e2d1e4;
+    box-shadow: 9px 4px 6px 6px #ccafaf;
+    -webkit-box-shadow: 9px 4px 6px 6px #ccafaf;
+    -moz-box-shadow: 9px 4px 6px 6px #ccafaf;
+    transition-duration: 2s;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.productos div:hover {
+    transform: scale(1.05);
+    transition-delay: 0.3s;
+}
+
+.productos div a {
+    text-align: center;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+.productos div img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.productos div .precio {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.productos div .tituloProducto {
+    position: relative;
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+}

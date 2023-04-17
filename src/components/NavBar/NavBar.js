@@ -1,23 +1,23 @@
 import NavBar from "./css/NavBar.css"
 import CartWidget from "../CartWidget/CartWidget"
-import ItemListContainer from "../ItemListContainer";
-function Nav(props){
-    return  <header className="contenedorNav">
-    
-    <h1>HardWorld</h1>
-    <nav className="NavBar">
-        <ul>
-            <li><a href="">Almacenamiento</a></li>
-            <li><a href="">Placas de video</a></li>
-            <li><a href="">Procesadores</a></li>
-            <li><a href="">Periféricos</a></li>
-            <li><CartWidget/>0</li>
-        </ul>
-    </nav>
+import logo from "./IMG/logo.png"
 
-    
-        
-   
-</header>;
-    }
-    export default Nav
+function Nav(props) {
+    return <header className="contenedorNav">
+
+        <div className="tituloConLogo">
+            <img src={logo} alt=""/>
+                <h1>HardWorld</h1>
+        </div>
+        <nav className="NavBar">
+            <ul>
+                <li><a href="http://localhost:3000/">Almacenamiento</a></li>
+                <li><a href="http://localhost:3000/">Placas de video</a></li>
+                <li><a href="http://localhost:3000/">Procesadores</a></li>
+                <li><a href="http://localhost:3000/">Periféricos</a></li>
+                <li><CartWidget />0</li>
+            </ul>
+        </nav>
+    </header>;
+}
+export default Nav
