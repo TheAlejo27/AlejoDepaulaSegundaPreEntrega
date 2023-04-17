@@ -556,14 +556,14 @@ const products = [
         id: 1,
         name: "Nvidia GeForce RTX 3090",
         price: "$1,499.99",
-        category: "Placa de Video Nvidia",
+        category: "categoria1",
         img: "https://www.techpowerup.com/review/nvidia-geforce-rtx-3090-ti-founders-edition/images/small.png",
         stock: '10',
     }, {
         id: 2,
         name: "AMD Radeon RX 6900 XT",
         price: "$999.99",
-        category: "Placa de Video AMD",
+        category: "categoria2",
         img: "https://cdna.pcpartpicker.com/static/forever/images/product/ab26489714c8104b0b352d09a0123d27.256p.jpg",
         stock: "10",
     },
@@ -571,14 +571,14 @@ const products = [
         id: 3,
         price: "$1100",
         name: "Intel Core i9-11900KF",
-        category: "Procesadores Intel",
+        category: "categoria3",
         img: "https://app.contabilium.com/files/explorer/7026/Productos-Servicios/concepto-7211270.jpg",
         stock: '10',
     },
     {
         id: 4,
         price: "$229.99",
-        category: "Auriculares",
+        category: "categoria4",
         name: "Auriculares HyperX Cloud Orbit S",
         img: 'https://http2.mlstatic.com/D_NQ_NP_986000-MLA48157767166_112021-O.jpg',
         stock: '10',
@@ -586,7 +586,7 @@ const products = [
         id: 5,
         price: "$780",
         name: "AMD Ryzen 9 3900X",
-        category: "Procesadores AMD",
+        category: "categoria5",
         img: "https://images-na.ssl-images-amazon.com/images/I/71WPGXQLcLL._AC_SL1200_.jpg",
         stock: '10',
     },
@@ -599,13 +599,16 @@ export const getProducts = () => {
         }, 500)
     })
 }
-export const getProductById = (productId) => {
-    return new Promise((resolve)=>{
-        setTimeout(() => {
-            resolve(products.find(prod => prod.id === productId))
-        }, 500)
-    })
-}
+export const getProductById = async (productId) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const filteredProduct = products.find(
+          (prod) => prod.id === parseInt(productId)
+        );
+        resolve(filteredProduct);
+      }, 1500);
+    });
+  };
 
 export const getProductsByCategory = (categoryId) => {
     return new Promise((resolve)=>{

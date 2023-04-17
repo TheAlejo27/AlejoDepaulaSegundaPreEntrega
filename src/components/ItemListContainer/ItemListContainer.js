@@ -16,18 +16,19 @@ const ItemListContainer = ({greeting}) =>{
     asyncFunc(categoryId)
         .then(response => {
             setProducts(response)
+            console.log(response)
         })
         .catch(error => {
             console.error(error)
         })
 }, [categoryId]);
-  
+console.log(ItemListContainer);
   return (
    <div>
      <h1>{categoryId}</h1>
-    <ItemList products={products}/>
+     <ItemList {...{ products }} />
    </div>
   )
 }
-
+console.log(ItemList);
 export default ItemListContainer
