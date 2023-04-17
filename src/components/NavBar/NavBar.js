@@ -1,10 +1,11 @@
+import React from "react"
 import NavBar from "./css/NavBar.css"
 import CartWidget from "../CartWidget/CartWidget"
 import logo from "./IMG/logo.png"
 import { Link, NavLink } from 'react-router-dom'
 
 function Nav(props) {
-    return <header className="contenedorNav">
+    return (<header className="contenedorNav">
 
         <div className="tituloConLogo">
             <img src={logo} alt="" />
@@ -35,6 +36,7 @@ function Nav(props) {
                 <li><CartWidget />0</li>
             </ul> */}
         </nav>
-    </header>;
+    </header>
+    );
 }
 export default Nav

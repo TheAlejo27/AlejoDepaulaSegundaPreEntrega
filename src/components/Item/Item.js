@@ -15,6 +15,6 @@ const Item = ({ id, name, img, price }) => {
             </footer>
         </article>
 
-    )
+    );
 }
 export default Item

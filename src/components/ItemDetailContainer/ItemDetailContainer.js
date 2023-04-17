@@ -22,6 +22,6 @@ const ItemDetailContainer =() => {
      <div>
         <ItemDetail {...products}/>
      </div>
-    )
+    );
     }
     export default ItemDetailContainer

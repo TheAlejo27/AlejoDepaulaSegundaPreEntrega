@@ -599,16 +599,13 @@ export const getProducts = () => {
         }, 500)
     })
 }
-export const getProductById = async (productId) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const filteredProduct = products.find(
-          (prod) => prod.id === parseInt(productId)
-        );
-        resolve(filteredProduct);
-      }, 1500);
-    });
-  };
+export const getProductById = (productId) => {
+    return new Promise((resolve)=>{
+        setTimeout(() => {
+            resolve(products.find(prod => prod.id === productId))
+        }, 500)
+    })
+}
 
 export const getProductsByCategory = (categoryId) => {
     return new Promise((resolve)=>{

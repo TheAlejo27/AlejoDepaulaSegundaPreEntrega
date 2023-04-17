@@ -49,7 +49,7 @@ const ItemDetail = ({id,name,img,category,description,price,stock}) => {
             }
             </footer>
         </article>
-    )
+    );
 }
 
 export default ItemDetail
