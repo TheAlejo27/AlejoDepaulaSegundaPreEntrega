@@ -10,8 +10,6 @@ const ItemDetail = ({id,name,img,category,description,price,stock}) => {
         setQuantityAdded(quantity)
 
     }
-
-
     return(
         <article>
             <header>
