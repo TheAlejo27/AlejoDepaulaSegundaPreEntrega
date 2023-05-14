@@ -6,7 +6,7 @@ import { getDoc, doc, } from "firebase/firestore"
 import { db } from "../Service/firebase/firebaseConfig";
 
 function ItemDetail({ itemId }) {
-  const [product, setProduct] = useState(null);
+  const [productos, setProduct] = useState(null);
 
   const { handleOnAdd, quantityAdded, } = useCart()
 
@@ -27,29 +27,29 @@ function ItemDetail({ itemId }) {
     }
   }, [itemId]);
 
-  if (!product) {
+  if (!productos) {
     return <div>Cargando...</div>;
   }
 
 
-  console.log("Cantidad seleccionada: ", quantityAdded, product)
+  console.log("Cantidad seleccionada: ", quantityAdded, productos)
 
 
 
   return (
     <>
       <div className=" bg-gray-300 max-w-sm rounded overflow-hidden shadow-lg mt-16 mb-10 mx-16 ">
-        <img className="w-full" src={product.pictureUrl} alt={product.title} />
+        <img className="w-full" src={productos.img} alt={productos.name} />
         <div className="px-6 py-4">
-          <div className="text-zinc-600 font-bold text-xl mb-2">{product.title}</div>
-          <p className="text-gray-700 font-semibold text-base">{product.description}</p>
-          <p className="text-gray-600 font-bold text-base mb-2 pt-2">${product.price}</p>
+          <div className="text-zinc-600 font-bold text-xl mb-2">{productos.name}</div>
+          <p className="text-gray-700 font-semibold text-base">{productos.category}</p>
+          <p className="text-gray-600 font-bold text-base mb-2 pt-2">${productos.price}</p>
         </div>
         <div className="px-6 pt-0 pb-9">
         <ItemCount
             initial={1}
             stock={10}
-            onAdd={(quantity) => handleOnAdd(quantity, product)}
+            onAdd={(quantity) => handleOnAdd(quantity, productos)}
           />
         </div>
       </div>

@@ -7,7 +7,7 @@ import { db } from "../Service/firebase/firebaseConfig";
 
 function ItemList() {
   const [selectedProductId, setSelectedProductId] = useState(null);
-  const [products, setProducts] = useState([]);
+  const [productos, setProducts] = useState([]);
   const { categoryId } = useParams();
   useEffect(() => {
     const collectionRef = categoryId
@@ -17,7 +17,6 @@ function ItemList() {
     getDocs(collectionRef)
       .then(response => {
         const productsAdapted = response.docs.map(doc => {
-
           const data = doc.data()
           console.log(data);
           return { id: doc.id, ...data }
@@ -35,17 +34,17 @@ function ItemList() {
     console.log(itemId);
     setSelectedProductId(itemId);
   }
-
+console.log(productos);
   return (
     <>
       {selectedProductId ? (
         <ItemDetail itemId={selectedProductId} />
       ) : (
-        products &&
-        products.map((product) => (
+        productos &&
+        productos.map((productos) => (
           <Item
-            key={product.id}
-            product={product}
+            key={productos.id}
+            productos={productos}
             onSelect={handleSelectProduct}
           />
         ))

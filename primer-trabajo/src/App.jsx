@@ -2,6 +2,7 @@ import "./index.css";
 import NavBar from "./Components/NavBar/NavBar";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
+import Hero from "./Components/hero/heroSection"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./Components/Context/ContextProviders/CartContextProvider";
 import Cart from "./Components/Cart/Cart";
@@ -17,7 +18,7 @@ function App() {
               path="/"
               element={
                 <ItemListContainer
-                  greeting={"Bienvenidos a nuestro shop online"}
+                  greeting={<Hero/>}
                 />
               }
             />

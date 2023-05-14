@@ -10,15 +10,15 @@ function CartContextProvider({children}) {
 
   console.log(cart)
 
-  const addProduct = (product, quantity) => {
-    if (inCart(product.id)) {
+  const addProduct = (productos, quantity) => {
+    if (inCart(productos.id)) {
       const cartActualized = cart.map((prod) =>
-        prod.id === product.id ? { ...prod, quantity: prod.quantity + quantity } : prod
+        prod.id === productos.id ? { ...prod, quantity: prod.quantity + quantity } : prod
       );
       setCart(cartActualized);
       setTotalProducts(totalProductsPrev => totalProductsPrev + quantity);
     } else {
-      setCart(cartPrev => [...cartPrev, { ...product, quantity }]);
+      setCart(cartPrev => [...cartPrev, { ...productos, quantity }]);
       setTotalProducts(totalProductsPrev => totalProductsPrev + quantity);
     }
   };
@@ -41,9 +41,9 @@ const inCart = (itemId) => {
     return cart.some((prod) => prod.id === itemId)
 }
 
-const handleOnAdd = (quantity, product) => {
+const handleOnAdd = (quantity, productos) => {
   setQuantityAdded(quantity)
-  addProduct(product, quantity)
+  addProduct(productos, quantity)
 }
 
 const valorTotal = (quantity, price) => {
