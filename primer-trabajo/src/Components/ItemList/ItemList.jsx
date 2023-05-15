@@ -11,7 +11,7 @@ function ItemList() {
   const { categoryId } = useParams();
   useEffect(() => {
     const collectionRef = categoryId
-      ? query(collection(db, 'productos'), where('type', '==', categoryId))
+      ? query(collection(db, 'productos'), where('category', '==', categoryId))
       : query(collection(db, 'productos'), orderBy("type", "asc"))
 
     getDocs(collectionRef)
